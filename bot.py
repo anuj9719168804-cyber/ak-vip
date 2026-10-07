@@ -59,7 +59,7 @@ MAX_FOLDER_FILES = int(os.getenv("MAX_FOLDER_FILES", "100"))
 # /start welcome (same look as fbot). Empty START_PHOTO_URL = text only.
 START_PHOTO_URL = os.getenv("START_PHOTO_URL", "https://t.me/log_ak_bot/202").strip()
 POWERED_BY = os.getenv("POWERED_BY", "Anuj Kumar")
-POWERED_BY_URL = os.getenv("POWERED_BY_URL", "https://t.me/anujedits97")
+POWERED_BY_URL = os.getenv("POWERED_BY_URL", "https://t.me/anujedits76")
 if os.getenv("TERABOX_SALT"):
     tb.SECRET_SALT = os.environ["TERABOX_SALT"]
 
