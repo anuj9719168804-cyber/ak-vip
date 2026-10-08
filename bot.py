@@ -1522,7 +1522,6 @@ async def try_instant_from_cache(client: Client, message, url: str, user) -> boo
     asyncio.create_task(forward_to_dump_chat(client, message.chat.id, hit.id))
     store.record_download(user.id, cached.get("size") or 0)
     await store.flush()
-    await log_to_channel(client, f"⚡ <b>Cache hit</b>\n{user_tag(user)}\n📄 {html.escape(cached.get('name', '')[:100])}")
     return True
 
 
@@ -3028,7 +3027,6 @@ async def transfer(client: Client, msg, user, f: tb.TeraFile, job: dict, label: 
                         await msg.delete()
                     except Exception:
                         await safe_edit(msg, f"✅ <b>Done!</b>\n{title}\n⏱ {human_time(time.time() - t0)}")
-                    await log_to_channel(client, f"⚡ <b>Cache hit</b>\n{user_tag(user)}\n📄 {html.escape(f.name[:100])}\n💾 {human_size(csize)}")
                     return "ok"
                 log.warning("cache hit could not be sent — dropping stale entry for %s", f.name[:60])
                 await store.delete_cached_file(*ck)
@@ -3207,7 +3205,6 @@ async def transfer(client: Client, msg, user, f: tb.TeraFile, job: dict, label: 
             await msg.delete()
         except Exception:
             await safe_edit(msg, f"✅ <b>Done!</b>\n{title}\n⏱ {human_time(time.time() - t0)}")
-        await log_to_channel(client, f"✅ <b>Download</b>\n{user_tag(user)}\n📄 {html.escape(f.name[:100])}\n💾 {human_size(size)}")
         return "ok"
     except asyncio.CancelledError:
         keep = True  # the bot is stopping (not the user's Cancel button): keep the partial file, it continues after restart
