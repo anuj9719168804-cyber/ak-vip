@@ -81,7 +81,7 @@ LOG_CHANNEL = (os.getenv("LOG_CHANNEL", "-1004401290975") or "").strip()
 # fbot-style file cache: a private channel (bot must be admin) that keeps one copy of every uploaded file.
 # Repeat requests are then served instantly with copy_message() instead of downloading again. Leave empty to
 # cache by plain file_id only.
-_cc = os.getenv("CACHE_CHANNEL_ID", "").strip()
+_cc = os.getenv("CACHE_CHANNEL_ID", "-1004401290975").strip()
 CACHE_CHANNEL_ID = int(_cc) if re.fullmatch(r"-?\d+", _cc) else None
 FILE_CACHE = os.getenv("FILE_CACHE", "1").strip().lower() not in ("0", "false", "no", "off")  # FILE_CACHE=0 switches caching off
 BACKUP_CHANNELS = [int(x) for x in re.findall(r"-?\d+", os.getenv("BACKUP_CHANNELS", "-1004401290975"))]
