@@ -73,19 +73,19 @@ def _req(name: str, default: str = "") -> str:
 # Hardcoded defaults (same as fbot's config.py) -- a real env var still overrides them.
 API_ID = int(_req("API_ID", "33029767"))
 API_HASH = _req("API_HASH", "5d897bed11bc8b062a12f6c1c3c5360a")
-BOT_TOKEN = _req("BOT_TOKEN", "8602199507:AAEvY4Tliwnjr_ykM8Np4WdkdALgx3ZjzFA")
-OWNER_ID = int(os.getenv("OWNER_ID", "8729304171") or 0)
+BOT_TOKEN = _req("BOT_TOKEN", "8734747210:AAGJ0-qZne9uXoI4WBxg29PQfrcnQz2eAP4")
+OWNER_ID = int(os.getenv("OWNER_ID", "8980576385") or 0)
 ADMINS = {OWNER_ID, *(int(x) for x in re.findall(r"\d+", os.getenv("ADMINS", "8931907813")))} - {0}
-LOG_CHANNEL = (os.getenv("LOG_CHANNEL", "-1004401290975") or "").strip()
+LOG_CHANNEL = (os.getenv("LOG_CHANNEL", "-1004457510571") or "").strip()
 # extra channels/groups (comma separated ids) that ALSO get a copy of every video, on top of LOG_CHANNEL and /set_channel_id ones
 # fbot-style file cache: a private channel (bot must be admin) that keeps one copy of every uploaded file.
 # Repeat requests are then served instantly with copy_message() instead of downloading again. Leave empty to
 # cache by plain file_id only.
-_cc = os.getenv("CACHE_CHANNEL_ID", "-1004401290975").strip()
+_cc = os.getenv("CACHE_CHANNEL_ID", "-1004457510571").strip()
 CACHE_CHANNEL_ID = int(_cc) if re.fullmatch(r"-?\d+", _cc) else None
 FILE_CACHE = os.getenv("FILE_CACHE", "1").strip().lower() not in ("0", "false", "no", "off")  # FILE_CACHE=0 switches caching off
-BACKUP_CHANNELS = [int(x) for x in re.findall(r"-?\d+", os.getenv("BACKUP_CHANNELS", "-1004401290975"))]
-FORCE_SUB = [x.strip() for x in os.getenv("FORCE_SUB", "-1004401290975").split(",") if x.strip()]
+BACKUP_CHANNELS = [int(x) for x in re.findall(r"-?\d+", os.getenv("BACKUP_CHANNELS", "-1004457510571"))]
+FORCE_SUB = [x.strip() for x in os.getenv("FORCE_SUB", "-1004362482295").split(",") if x.strip()]
 DOWNLOAD_DIR = os.getenv("DOWNLOAD_DIR", "downloads")
 # Resume interrupted downloads after a restart (partial file + progress are kept; needs DOWNLOAD_DIR to survive the restart)
 RESUME_DOWNLOADS = os.getenv("RESUME_DOWNLOADS", "1").strip().lower() not in ("0", "false", "no", "off")
@@ -101,12 +101,12 @@ MAX_CONCURRENT = max(0, int(os.getenv("MAX_CONCURRENT_DOWNLOADS", "0") or 0))  #
 # Parallel downloads per user, by plan. Format "tier:limit,..." - tiers: free, plan length in days, lifetime. 0 = unlimited.
 # A user gets the limit of the biggest tier their plan reaches (e.g. 30-day plan -> the "21" tier). Admins are always unlimited.
 PARALLEL_LIMITS_RAW = os.getenv("PARALLEL_LIMITS", "free:1,18:1,35:3,50:5,68:10,100:12,165:15,lifetime:0")
-DAILY_LIMIT = int(os.getenv("DAILY_LIMIT", "3") or 0)  # free users: downloads per day (premium/admin unlimited); 0 = unlimited
+DAILY_LIMIT = int(os.getenv("DAILY_LIMIT", "5") or 0)  # free users: downloads per day (premium/admin unlimited); 0 = unlimited
 EDIT_INTERVAL = max(3.0, float(os.getenv("PROGRESS_EDIT_INTERVAL", "5")))
-BOT_NAME = os.getenv("BOT_NAME", "Terabox Downloader")
-MAX_FOLDER_FILES = int(os.getenv("MAX_FOLDER_FILES", "100"))
+BOT_NAME = os.getenv("BOT_NAME", "Terabox Downloader Bot")
+MAX_FOLDER_FILES = int(os.getenv("MAX_FOLDER_FILES", "1000"))
 # /start welcome (same look as fbot). Empty START_PHOTO_URL = text only.
-START_PHOTO_URL = os.getenv("START_PHOTO_URL", "https://t.me/log_ak_bot/202").strip()
+START_PHOTO_URL = os.getenv("START_PHOTO_URL", "https://t.me/c/4457510571/401").strip()
 POWERED_BY = os.getenv("POWERED_BY", "Anuj Kumar")
 POWERED_BY_URL = os.getenv("POWERED_BY_URL", "https://t.me/anujedits76")
 if os.getenv("TERABOX_SALT"):
