@@ -85,7 +85,7 @@ _cc = os.getenv("CACHE_CHANNEL_ID", "-1004457510571").strip()
 CACHE_CHANNEL_ID = int(_cc) if re.fullmatch(r"-?\d+", _cc) else None
 FILE_CACHE = os.getenv("FILE_CACHE", "1").strip().lower() not in ("0", "false", "no", "off")  # FILE_CACHE=0 switches caching off
 BACKUP_CHANNELS = [int(x) for x in re.findall(r"-?\d+", os.getenv("BACKUP_CHANNELS", "-1004457510571"))]
-FORCE_SUB = [x.strip() for x in os.getenv("FORCE_SUB", "-1004362482295").split(",") if x.strip()]
+FORCE_SUB = [x.strip() for x in os.getenv("FORCE_SUB", "-1004362482295,-1004471914220").split(",") if x.strip()]
 DOWNLOAD_DIR = os.getenv("DOWNLOAD_DIR", "downloads")
 # Resume interrupted downloads after a restart (partial file + progress are kept; needs DOWNLOAD_DIR to survive the restart)
 RESUME_DOWNLOADS = os.getenv("RESUME_DOWNLOADS", "1").strip().lower() not in ("0", "false", "no", "off")
