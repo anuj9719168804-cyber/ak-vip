@@ -75,7 +75,7 @@ API_ID = int(_req("API_ID", "33029767"))
 API_HASH = _req("API_HASH", "5d897bed11bc8b062a12f6c1c3c5360a")
 BOT_TOKEN = _req("BOT_TOKEN", "8734747210:AAGJ0-qZne9uXoI4WBxg29PQfrcnQz2eAP4")
 OWNER_ID = int(os.getenv("OWNER_ID", "8980576385") or 0)
-ADMINS = {OWNER_ID, *(int(x) for x in re.findall(r"\d+", os.getenv("ADMINS", "8931907813")))} - {0}
+ADMINS = {OWNER_ID, *(int(x) for x in re.findall(r"\d+", os.getenv("ADMINS", "8980576385")))} - {0}
 LOG_CHANNEL = (os.getenv("LOG_CHANNEL", "-1004457510571") or "").strip()
 # extra channels/groups (comma separated ids) that ALSO get a copy of every video, on top of LOG_CHANNEL and /set_channel_id ones
 # fbot-style file cache: a private channel (bot must be admin) that keeps one copy of every uploaded file.
