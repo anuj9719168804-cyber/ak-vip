@@ -107,8 +107,8 @@ BOT_NAME = os.getenv("BOT_NAME", "Terabox Downloader Bot")
 MAX_FOLDER_FILES = int(os.getenv("MAX_FOLDER_FILES", "1000"))
 # /start welcome (same look as fbot). Empty START_PHOTO_URL = text only.
 START_PHOTO_URL = os.getenv("START_PHOTO_URL", "https://t.me/c/4457510571/401").strip()
-POWERED_BY = os.getenv("POWERED_BY", "Anuj Kumar")
-POWERED_BY_URL = os.getenv("POWERED_BY_URL", "https://t.me/anujedits76")
+POWERED_BY = os.getenv("POWERED_BY", "🔥 𝘼𝙆 𝙀𝙈𝙋𝙄𝙍𝙀 🔥")
+POWERED_BY_URL = os.getenv("POWERED_BY_URL", "https://t.me/anujedits97")
 if os.getenv("TERABOX_SALT"):
     tb.SECRET_SALT = os.environ["TERABOX_SALT"]
 
